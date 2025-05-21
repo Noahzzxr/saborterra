@@ -1,0 +1,215 @@
+/* Estilos gerais */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Animações */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-delay-1 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Hero Section */
+#hero-section {
+  background: linear-gradient(135deg, #2d7d46 0%, #4CAF50 100%);
+}
+
+/* Processo de reserva */
+.progress-step {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active {
+  background-color: #2d7d46;
+  color: white;
+  border-color: #2d7d46;
+}
+
+.progress-connector {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #e5e7eb;
+  margin: 0 10px;
+}
+
+.time-slot.selected {
+  background-color: #2d7d46;
+  color: white;
+  border-color: #2d7d46;
+}
+
+.table-selection.selected {
+  border-color: #2d7d46;
+  background-color: #f0fdf4;
+}
+
+.table-selection:hover {
+  border-color: #2d7d46;
+}
+
+/* Checkbox e Radio customizados */
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.custom-checkbox.selected {
+  background-color: #2d7d46;
+  border-color: #2d7d46;
+}
+
+.custom-checkbox.selected::after {
+  opacity: 1;
+}
+
+.custom-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.custom-radio.selected {
+  border-color: #2d7d46;
+}
+
+.custom-radio.selected::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background-color: #2d7d46;
+  border-radius: 50%;
+}
+
+/* Mensagem de sucesso */
+.checkmark-circle {
+  stroke: #2d7d46;
+  stroke-width: 2;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  stroke: #2d7d46;
+  stroke-width: 2;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.checkmark {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Cards de menu */
+.menu-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .progress-connector {
+    margin: 0 5px;
+  }
+}
+/* Estilos específicos para a página de menu */
+.menu-item {
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.add-to-cart {
+  transition: all 0.2s ease;
+}
+
+/* Estilos específicos para a página de contato */
+.social-icon {
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
+/* Efeito para os cards de informação de contato */
+.bg-gray-50:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Estilo para o mapa */
+iframe {
+  min-height: 450px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-info-card {
+    margin-bottom: 1.5rem;
+  }
+}
